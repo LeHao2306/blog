@@ -6,15 +6,15 @@ import { remarkReadingTime } from './src/utils/remarkReadingTime.ts'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import rehypeExternalLinks from 'rehype-external-links'
 import expressiveCode from 'astro-expressive-code'
-import { expressiveCodeOptions } from './src/site.config'
+import { base, expressiveCodeOptions, siteConfig } from './src/site.config'
 import icon from 'astro-icon'
 
 import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://LeHao2306.github.io/blog',
-	base: '/blog/',
+	site: siteConfig.site.url,
+	base: base,
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
 		tailwind({

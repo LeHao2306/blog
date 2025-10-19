@@ -6,6 +6,10 @@ export const siteConfig: SiteConfig = {
 	author: 'SRLEOM',
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: 'astro-theme-resume',
+	site: {
+		url: 'https://LeHao2306.github.io',
+		base: '/blog/',
+	},
 	// Meta property used as the default description meta property
 	description: 'The official Astro Resume Theme',
 	// HTML lang property, found in src/layouts/Base.astro L:18
@@ -23,14 +27,16 @@ export const siteConfig: SiteConfig = {
 	}
 }
 
+export const base = siteConfig.site.base === '/' ? '' : siteConfig.site.base.replace(/\/$/, '')
+
 export const menuLinks: Array<{ title: string; path: string }> = [
 	{
 		title: 'Home',
-		path: '/'
+		path: base
 	},
 	{
 		title: 'Blog',
-		path: '/blog/'
+		path: base + 'blog'
 	}
 ]
 
@@ -63,3 +69,4 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 			'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'
 	}
 }
+

@@ -1,6 +1,10 @@
 export type SiteConfig = {
 	author: string
 	title: string
+	site: {
+		url: string
+		base: string
+	}
 	description: string
 	lang: string
 	ogLocale: string
