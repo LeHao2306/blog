@@ -1,6 +1,7 @@
 ---
 import Button from '@/components/Button.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
+import { base } from '@/site-config'
 import { getAllPosts, getUniqueTagsWithCount } from '@/utils'
 
 const allPosts = await getAllPosts()
@@ -14,7 +15,7 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<div class='w-full'>
-		<Button title='Back' href='/blog' style='button'>
+		<Button title='Back' href={`${base}/blog`} style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -41,7 +42,7 @@ const meta = {
 							<a
 								class='inline-block underline underline-offset-4 hover:text-foreground/75'
 								data-astro-prefetch
-								href={`/tags/${tag}/`}
+								href={`${base}/tags/${tag}/`}
 								title={`View posts with the tag: ${tag}`}
 							>
 								&#35;{tag}

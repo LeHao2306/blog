@@ -1,5 +1,4 @@
 ---
-import { base } from '@/site-config'
 import { cn } from '@/utils'
 const { as: Tag = 'a', class: className, title, href, style = 'button' } = Astro.props
 ---
@@ -11,7 +10,7 @@ const { as: Tag = 'a', class: className, title, href, style = 'button' } = Astro
 		!href && 'cursor-default',
 		style === 'pill' && 'rounded-xl'
 	)}
-	href={base + href}
+	href={href}
 	data-astro-prefetch
 >
 	<slot name='icon-before' />

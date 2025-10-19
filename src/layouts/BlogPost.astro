@@ -6,6 +6,7 @@ import TOC from '@/components/blog/TOC.astro'
 import Button from '@/components/Button.astro'
 
 import PageLayout from './BaseLayout.astro'
+import { base } from '@/site-config'
 
 interface Props {
 	post: CollectionEntry<'post'>
@@ -24,7 +25,7 @@ const { headings } = await post.render()
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	<div class='w-full'>
-		<Button title='Back' href='/blog' style='button'>
+		<Button title='Back' href={`${base}/blog`} style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
