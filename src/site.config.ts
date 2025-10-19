@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: 'astro-theme-resume',
 	site: {
-		url: 'https://LeHao2306.github.io',
+		url: 'https://lehao2306.github.io',
 		base: '/blog/',
 	},
 	// Meta property used as the default description meta property
